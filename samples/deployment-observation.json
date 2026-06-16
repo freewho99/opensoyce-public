@@ -1,0 +1,46 @@
+{
+    "_comment": "SAMPLE ONLY — sanitized for public reference. Not a real production observation.",
+    "type": "opensoyce-deployment-observation",
+    "version": 1,
+    "observed_at": "2026-06-15T00:00:00.000Z",
+    "environment": "production",
+    "service": "example-service",
+    "artifact_digest": "sha256:SAMPLE_ARTIFACT_DIGEST_REDACTED",
+    "ci_environment": {
+          "observed_by_type": "ci",
+          "provider_name": "github-actions",
+          "repository": "example-org/example-repo",
+          "workflow": "deployment-observation.yml",
+          "run_id": "REDACTED",
+          "run_attempt": "1",
+          "actor": "REDACTED",
+          "sha": "SAMPLE_SHA_REDACTED",
+          "ref": "refs/heads/main",
+          "job": "observe",
+          "server_url": "https://github.com",
+          "run_url": "https://github.com/example-org/example-repo/actions/runs/REDACTED"
+    },
+        "doctrine": {
+              "note": "CI observation is not runtime truth.",
+              "explanation": "This artifact records what CI saw and its provenance — it does not prove what is currently running. OpenSoyce does not sign it or vouch for the source's authority.",
+              "reconciliation_instruction": "Load this file in the Deployment observation section of the /packet viewer to reconcile against a packet's declared deployed-artifact binding. A match is reconciliation, not certification; a mismatch is a review signal, not a verdict."
+        },
+            "non_claims": [
+              {
+                      "id": "nc-obs-001",
+                      "claim": "This observation does not prove what is currently running in production.",
+                      "scope": "deployment-observation"
+              },
+              {
+                      "id": "nc-obs-002",
+                      "claim": "CI observation provenance is self-reported by the CI environment — not independently verified by OpenSoyce.",
+                      "scope": "deployment-observation"
+              },
+              {
+                      "id": "nc-obs-003",
+                      "claim": "A reconciliation match is not a security certification.",
+                      "scope": "deployment-observation"
+              }
+                ],
+                "note": "Observation values redacted. See opensoyce.vercel.app/trust for live verified examples."
+}
