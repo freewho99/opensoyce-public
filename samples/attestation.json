@@ -1,0 +1,48 @@
+{
+    "_comment": "SAMPLE ONLY — sanitized for public reference. Not a real production attestation.",
+    "type": "opensoyce-attestation",
+    "version": 1,
+    "created_at": "2026-06-15T00:00:00.000Z",
+    "packet_digest": "sha256:SAMPLE_PACKET_DIGEST_REDACTED",
+    "attester": {
+          "name": "Jordan Lee",
+          "organization": "Acme Corp",
+          "role": "Security Officer",
+          "identity_verification": "self-asserted",
+          "note": "Attester identity is self-asserted. OpenSoyce does not verify attester identity."
+    },
+    "attestation_scope": {
+          "covers": "packet integrity and declared evidence chain",
+          "does_not_cover": [
+                  "runtime production state",
+                  "absence of vulnerabilities",
+                  "compliance certification",
+                  "deployed artifact identity"
+          ]
+    },
+    "statement": "I attest that I have reviewed the evidence bundle identified by the packet digest above and that the declared records reflect the trust-decision chain for this component to the best of my knowledge.",
+    "non_claims": [
+          {
+                  "id": "nc-att-001",
+                  "claim": "This attestation is not a security certification or compliance finding.",
+                  "scope": "attestation"
+          },
+          {
+                  "id": "nc-att-002",
+                  "claim": "OpenSoyce does not verify the identity of the attester beyond what is self-asserted.",
+                  "scope": "attestation"
+          },
+          {
+                  "id": "nc-att-003",
+                  "claim": "Attestation does not guarantee the software is free of vulnerabilities.",
+                  "scope": "attestation"
+          }
+    ],
+    "signature": {
+          "present": true,
+          "algorithm": "Ed25519",
+          "public_key_fingerprint": "SAMPLE_ATTESTER_KEY_REDACTED",
+          "value": "SAMPLE_ATTESTATION_SIGNATURE_REDACTED",
+          "note": "Signature values redacted. See opensoyce.vercel.app/trust for live verified examples."
+    }
+}
