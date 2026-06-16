@@ -1,0 +1,70 @@
+{
+    "_comment": "SAMPLE ONLY — the non-claim doctrine is central to how OpenSoyce works. These are representative examples.",
+    "type": "opensoyce-non-claims",
+    "version": 1,
+    "about": "Non-claims are explicit statements of what OpenSoyce does NOT assert. They are not disclaimers — they are load-bearing doctrine. Every packet, attestation, and receipt carries non-claims so that buyers, security teams, and auditors understand exactly what the trust record does and does not prove.",
+    "non_claims": [
+          {
+                  "id": "nc-core-001",
+                  "category": "certification",
+                  "claim": "OpenSoyce does not certify that software is safe, secure, or production-ready.",
+                  "explanation": "A signed packet records a trust-decision chain. It does not replace a security audit, penetration test, or compliance review.",
+                  "scope": "platform"
+          },
+          {
+                  "id": "nc-core-002",
+                  "category": "vulnerability",
+                  "claim": "A packet does not prove the absence of vulnerabilities.",
+                  "explanation": "'No known intelligence recorded' means the record holds none — not that none exist. Threat intelligence is incomplete by definition.",
+                  "scope": "platform"
+          },
+          {
+                  "id": "nc-core-003",
+                  "category": "remediation",
+                  "claim": "A recorded remediation direction is not proof that remediation was completed.",
+                  "explanation": "OpenSoyce records directions and evidence. It validates evidence is present and referenced — it does not verify the fix itself.",
+                  "scope": "platform"
+          },
+          {
+                  "id": "nc-core-004",
+                  "category": "runtime",
+                  "claim": "A signed packet does not prove what is currently deployed or running in production.",
+                  "explanation": "Packets record declared artifact identity at ingestion time. Runtime observation (CI deployment observation) is a separate, reconcilable artifact — and it too does not prove live runtime state.",
+                  "scope": "platform"
+          },
+          {
+                  "id": "nc-core-005",
+                  "category": "signature",
+                  "claim": "Signature validity proves packet integrity only — not software quality or absence of vulnerabilities.",
+                  "explanation": "An Ed25519 signature over the bundle bytes proves the bundle has not been altered since signing. It says nothing about the content quality.",
+                  "scope": "signature"
+          },
+          {
+                  "id": "nc-core-006",
+                  "category": "attestation",
+                  "claim": "OpenSoyce does not verify the identity of the attester beyond what is self-asserted.",
+                  "explanation": "Attester name and organization are self-declared. The attester signature proves they held the private key — not their identity, role authority, or competence.",
+                  "scope": "attestation"
+          },
+          {
+                  "id": "nc-core-007",
+                  "category": "receipt",
+                  "claim": "A buyer verification receipt is buyer-generated and OpenSoyce-unsigned.",
+                  "explanation": "The receipt records what was reviewed. Its trust derives from the signed bundle it points back to. A failed-verification receipt is a valid review record.",
+                  "scope": "receipt"
+          },
+          {
+                  "id": "nc-core-008",
+                  "category": "compliance",
+                  "claim": "OpenSoyce does not replace an auditor or guarantee acceptance by any customer security review.",
+                  "explanation": "Trust records are evidence inputs to review processes — not certification outputs.",
+                  "scope": "platform"
+          }
+    ],
+    "why_non_claims_matter": "The non-claim doctrine is what makes OpenSoyce honest. A trust record that overpromises is worse than no trust record. Non-claims are printed on every artifact so that reviewers know exactly what they are holding.",
+    "public_credibility_layer": {
+          "trust": "https://opensoyce.vercel.app/trust",
+          "opensource_trust": "https://opensoyce.vercel.app/opensource-trust",
+          "note": "Live verified proof artifacts and public key information are available at these URLs."
+    }
+}
