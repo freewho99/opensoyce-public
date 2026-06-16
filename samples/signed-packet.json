@@ -1,0 +1,78 @@
+{
+    "_comment": "SAMPLE ONLY — sanitized for public reference. Not a real production packet.",
+    "format": "opensoyce-evidence-bundle",
+    "version": 1,
+    "generated_at": "2026-06-15T00:00:00.000Z",
+    "workspace": {
+          "slug": "sample-workspace",
+          "display_name": "Sample Workspace"
+    },
+    "subject": {
+          "kind": "package",
+          "name": "example-lib",
+          "observed_version": "2.1.0",
+          "artifact_digest": {
+                  "present": true,
+                  "value": "sha512-AAABBBCCC...EXAMPLE==",
+                  "algorithm": "sha512",
+                  "encoding": "sri",
+                  "source": "npm-lockfile-integrity",
+                  "claim_scope": "declared-package-artifact",
+                  "note": "Attests declared package artifact identity only — not what is deployed or running."
+          }
+    },
+    "sections": {
+          "observation": {
+                  "present": true,
+                  "exposure_id": "00000000-0000-0000-0000-000000000001",
+                  "exposure_type": "dependency-exposure",
+                  "status": "observed",
+                  "source_kind": "cli",
+                  "trust_boundary": {
+                            "manifest_kind": "package-lock.json",
+                            "package_manager": "npm"
+                  }
+          },
+          "vulnerability_context": {
+                  "present": false,
+                  "note": "No known intelligence recorded — not that no vulnerabilities exist.",
+                  "intel": []
+          }
+    },
+    "honest_edges": {
+          "proves": [
+                  "A component observation was recorded with source provenance and timestamps.",
+                  "Artifact digest attests the declared ingested package artifact identity."
+          ],
+          "does_not_prove": [
+                  "Not a compliance certification.",
+                  "Does not prove a vulnerability was remediated.",
+                  "Does not prove absence of vulnerabilities.",
+                  "Artifact digest is not proof of what is deployed or running in production."
+          ]
+    },
+    "non_claims": [
+          {
+                  "id": "nc-001",
+                  "claim": "OpenSoyce does not certify that this software is safe, secure, or production-ready.",
+                  "scope": "packet"
+          },
+          {
+                  "id": "nc-002",
+                  "claim": "This packet does not represent a security audit or compliance certification.",
+                  "scope": "packet"
+          },
+          {
+                  "id": "nc-003",
+                  "claim": "Signature validity proves packet integrity only — not software quality or absence of vulnerabilities.",
+                  "scope": "signature"
+          }
+    ],
+    "signature": {
+          "present": true,
+          "algorithm": "Ed25519",
+          "public_key_fingerprint": "SAMPLE_FINGERPRINT_REDACTED",
+          "value": "SAMPLE_SIGNATURE_REDACTED",
+          "note": "Signature values redacted. See opensoyce.vercel.app/trust for live verified examples."
+    }
+}
