@@ -1,0 +1,48 @@
+{
+  "_comment": "SAMPLE ONLY — sanitized for public reference. Not a real production receipt.",
+  "type": "opensoyce-verification-receipt",
+  "version": 1,
+  "downloaded_at": "2026-06-15T00:00:00.000Z",
+  "viewer_mode": "shared_link",
+  "verification_result": "verified",
+  "packet_digest": "sha256:SAMPLE_PACKET_DIGEST_REDACTED",
+  "packet_signature_fingerprint": "SAMPLE_FINGERPRINT_REDACTED",
+  "packet_signature_status": "valid",
+  "attestation_status": "valid",
+  "attester_name": "Jordan Lee",
+  "attester_org": "Acme Corp",
+  "deployed_artifact_binding_status": "present",
+  "declared_artifact_digest": "sha256:SAMPLE_ARTIFACT_DIGEST_REDACTED",
+  "declared_artifact_scope": "declared-build-or-deploy-artifact",
+  "expiry_status": "none",
+  "standards_sidecars_present": {
+    "count": 6,
+    "note": "Standards sidecars are metadata references only, not certifications."
+  },
+  "self_asserted_reviewer": {
+    "unverified": true,
+    "disclaimer": "Reviewer identity is self-asserted and not verified by OpenSoyce.",
+    "name": "REVIEWER_NAME_REDACTED",
+    "organization": "REVIEWER_ORG_REDACTED",
+    "note": "REVIEWER_NOTE_REDACTED"
+  },
+  "non_claims": [
+    {
+      "id": "nc-receipt-001",
+      "claim": "This receipt is buyer-generated and OpenSoyce-unsigned. It records what was reviewed, not a certification of the software.",
+      "scope": "receipt"
+    },
+    {
+      "id": "nc-receipt-002",
+      "claim": "Verification result 'verified' means the packet signature and attestation were valid at review time — not that the software is safe or production-ready.",
+      "scope": "receipt"
+    },
+    {
+      "id": "nc-receipt-003",
+      "claim": "This receipt does not certify the reviewer's identity, expertise, or authority.",
+      "scope": "receipt"
+    }
+  ],
+  "reverify_instruction": "To re-verify, load the original signed bundle at opensoyce.vercel.app/packet and compare the packet_digest above.",
+  "note": "Receipt values redacted. See opensoyce.vercel.app/trust for live verified examples."
+}
